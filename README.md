@@ -1,2 +1,2 @@
 # ProblemSolving
-Diversos problemas y ejercicios resueltos en GO
+Resolucion de diversos problemas y ejercicios.
