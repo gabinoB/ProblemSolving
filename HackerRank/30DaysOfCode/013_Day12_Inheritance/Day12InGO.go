@@ -47,76 +47,17 @@ func main() {
 	var firstName string
 	var lastName string
 	var id int32
-
 	fmt.Scan(&firstName, &lastName, &id)
 
-	fmt.Println(firstName)
-	fmt.Println(lastName)
-	fmt.Println(id)
+	var amountOfTestScores uint8
+	fmt.Scan(&amountOfTestScores)
 
-	//scanner := bufio.NewScanner(os.Stdin)
-	//
-	//data := scanner.Text()
-	//
-	//fmt.Println(data)
+	p := Person{
+		firstName,
+		lastName,
+		id,
+	}
 
-	//var data string
-	//
-	//for i := 0; i < 3; i++ {
-	//	data = data + scanner.Text()
-	//}
-	//
-	//fmt.Println(data)
-
-	//var data string
-	//fmt.Scanln(&data)
-	//
-	//fmt.Println(data)
-	//fmt.Println(data[0])
-	//fmt.Println(data[1])
-	//fmt.Println(data[2])
-
-	//reader := bufio.NewReader(os.Stdin)
-	//data, err := reader.ReadSlice('\n')
-	//if err != nil {
-	//	panic(err)
-	//}
-	//fmt.Println(data)
-
-	//var firstName string
-	//var lastName string
-	//var identification int32
-
-	//in := bufio.NewReader(os.Stdin)
-	//data, _ := in.ReadString('\n')
-
-	//var data [3]string
-	//fmt.Scan(&data)
-	//firstName := string(data[0])
-	//lastName := data[1]
-	//identification := int32(data[2])
-	//if err != nil {
-	//	panic(err)
-	//}
-
-	//fmt.Printf("%v %v %v", firstName, lastName, identification)
-
-	//gabino := Person{
-	//	firstName:      "Gabino",
-	//	lastName:       "Ballay",
-	//	identification: 37562213,
-	//}
-	//
-	//var arr []int32 //Problemas con el indice y el tamaño de los arrays y slices
-	//arr[0] = 1      //Ver bien el tema de los tipos de datos estaticos y dinamicos.
-	//arr[1] = 2      //Necesito que el array sea dinamico.
-	//
-	//gabinoProfesor := profesor{
-	//	&gabino,
-	//	arr,
-	//}
-	//
-	//gabino.printPerson()
-	//fmt.Printf("%v", gabinoProfesor.testScores)
+	p.printPerson()
 
 }
