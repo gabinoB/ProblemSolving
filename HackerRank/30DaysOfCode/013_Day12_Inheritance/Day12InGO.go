@@ -51,6 +51,12 @@ func main() {
 
 	var amountOfTestScores uint8
 	fmt.Scan(&amountOfTestScores)
+	var testScores []int32
+	for i := 0; i < int(amountOfTestScores); i++ {
+		var v int32
+		fmt.Scan(&v)
+		testScores[i] = v
+	}
 
 	p := Person{
 		firstName,
