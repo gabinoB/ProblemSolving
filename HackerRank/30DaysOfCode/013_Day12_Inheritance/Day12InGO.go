@@ -12,14 +12,14 @@ type Person struct {
 
 type profesor struct {
 	*Person
-	testScores []int32
+	testScores [2]int32
 }
 
 func (pp profesor) calculate() string {
 	sum := 0
 	result := 0
 	for i := 0; i < len(pp.testScores); i++ {
-		//sum = sum + pp.testScores[i]
+		sum = sum + int(pp.testScores[i])
 	}
 	result = sum / len(pp.testScores)
 
@@ -51,7 +51,7 @@ func main() {
 
 	var amountOfTestScores uint8
 	fmt.Scan(&amountOfTestScores)
-	var testScores []int32
+	var testScores [2]int32
 	for i := 0; i < int(amountOfTestScores); i++ {
 		var v int32
 		fmt.Scan(&v)
@@ -64,6 +64,14 @@ func main() {
 		id,
 	}
 
+	pp := profesor{
+		&p,
+		testScores,
+	}
+
 	p.printPerson()
+	grade := pp.calculate()
+
+	fmt.Printf("\nGrade: %s", grade)
 
 }
