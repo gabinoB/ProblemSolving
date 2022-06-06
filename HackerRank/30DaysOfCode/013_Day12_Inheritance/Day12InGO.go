@@ -12,7 +12,7 @@ type Person struct {
 
 type profesor struct {
 	*Person
-	testScores [2]int32
+	testScores []int32
 }
 
 func (pp profesor) calculate() string {
@@ -51,7 +51,7 @@ func main() {
 
 	var amountOfTestScores uint8
 	fmt.Scan(&amountOfTestScores)
-	var testScores [2]int32
+	var testScores []int32
 	for i := 0; i < int(amountOfTestScores); i++ {
 		var v int32
 		fmt.Scan(&v)
