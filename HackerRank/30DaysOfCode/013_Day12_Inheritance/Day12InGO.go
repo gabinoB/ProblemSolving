@@ -51,11 +51,13 @@ func main() {
 
 	var amountOfTestScores uint8
 	fmt.Scan(&amountOfTestScores)
-	var testScores []int32
+
+	testScores := make([]int32, amountOfTestScores)
+
 	for i := 0; i < int(amountOfTestScores); i++ {
 		var v int32
 		fmt.Scan(&v)
-		testScores[i] = v
+		testScores = append(testScores, v)
 	}
 
 	p := Person{
