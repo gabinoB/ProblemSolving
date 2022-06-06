@@ -72,8 +72,8 @@ func main() {
 	}
 
 	p.printPerson()
-	grade := pp.calculate()
 
+	grade := pp.calculate()
 	fmt.Printf("\nGrade: %s", grade)
 
 }
