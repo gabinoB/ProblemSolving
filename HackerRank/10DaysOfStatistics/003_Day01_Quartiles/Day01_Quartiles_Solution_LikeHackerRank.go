@@ -19,14 +19,14 @@ import (
 
 func evenLowQuartile(arr []int32) int32 {
 	if (len(arr)/2)%2 == 0 {
-		return ((arr[((len(arr)/2)/2)-1]) + (arr[((len(arr)/2)/2)])/2)
+		return (((arr[((len(arr)/2)/2)-1]) + (arr[((len(arr) / 2) / 2)])) / 2)
 	} else {
 		return (arr[((len(arr) / 2) / 2)])
 	}
 }
 
 func evenMidQuartile(arr []int32) int32 {
-	return ((arr[len(arr)/2] + arr[(len(arr)/2)+1]) / 2)
+	return ((arr[((len(arr)/2)-1)] + arr[(len(arr)/2)]) / 2)
 }
 
 func reverseArray(arr []int32) []int32 {
@@ -75,7 +75,7 @@ func quartiles(arr []int32) [3]int32 {
 	var highQuartile int32
 	var solution_ArrToReturn [3]int32
 
-	if len(arr) == 10 {
+	if len(arr)%2 == 0 {
 		lowQuartile = evenLowQuartile(arr)
 		midQuartile = evenMidQuartile(arr)
 		highQuartile = evenHighQuartile(arr)
@@ -107,6 +107,8 @@ func main() {
 	n := int32(nTemp)
 
 	dataTemp := strings.Split(strings.TrimSpace(readLine(reader)), " ")
+
+	fmt.Scan(&n)
 
 	var data []int32
 
