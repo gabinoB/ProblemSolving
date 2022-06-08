@@ -9,21 +9,14 @@ import (
 	"strings"
 )
 
-/*
- * Complete the 'interQuartile' function below.
- *
- * The function accepts following parameters:
- *  1. INTEGER_ARRAY values
- *  2. INTEGER_ARRAY freqs
- */
-
 func createDataSet(values []int32, freqs []int32) []int32 {
 
 	var S []int32
 
-	for val := range values {
-		for i := 0; i < int(freqs[i]); i++ {
-			S = append(S, int32(val))
+	for i := 0; i < len(values); i++ {
+		v := values[i]
+		for j := 0; j < int(freqs[i]); j++ {
+			S = append(S, v)
 		}
 	}
 
@@ -31,14 +24,6 @@ func createDataSet(values []int32, freqs []int32) []int32 {
 }
 
 func interQuartile(values []int32, freqs []int32) {
-	// Print your answer to 1 decimal place within this function
-
-	/*
-		Crear un array S en el que haya tantas veces el primer valor de values como indique el primer valor de freqs, para esto tengo que hacer que, con un bucle for que
-		recorre el arr values se repita otro bucle for la cantidad de veces que indica el valor de freqs[i]
-
-		Quizas con un bucle for "i j" se pueda hacer.
-	*/
 
 	S := createDataSet(values, freqs)
 
