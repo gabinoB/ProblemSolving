@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"io"
 	"os"
+	"sort"
 	"strconv"
 	"strings"
 )
@@ -23,11 +24,53 @@ func createDataSet(values []int32, freqs []int32) []int32 {
 	return S
 }
 
+func getLowQuartileForEvenLenArr(arr []int32) int32 {
+	if (len(arr)/2)%2 == 0 {
+		return (((arr[((len(arr)/2)/2)-1]) + (arr[((len(arr) / 2) / 2)])) / 2)
+	} else {
+		return (arr[((len(arr) / 2) / 2)])
+	}
+}
+
+func reverseArray(arr []int32) []int32 {
+	for i, j := 0, len(arr)-1; i < j; i, j = i+1, j-1 {
+		arr[i], arr[j] = arr[j], arr[i]
+	}
+	return arr
+}
+
+func getLowQuartileForOddLenArr(arr []int32) int32 {
+	if (len(arr)/2)%2 == 0 {
+		return ((arr[(((len(arr))/2)/2)] + arr[(((len(arr))/2)/2)-1]) / 2)
+	} else {
+		return (arr[((len(arr))/2)/2])
+	}
+}
+
 func interQuartile(values []int32, freqs []int32) {
 
 	S := createDataSet(values, freqs)
 
-	fmt.Println(S)
+	sort.Slice(S, func(i, j int) bool {
+		return S[i] < S[j]
+	})
+
+	var lowQuartile int32
+	var highQuartile int32
+
+	if len(S)%2 == 0 {
+		lowQuartile = getLowQuartileForEvenLenArr(S)
+		reversedS := reverseArray(S)
+		highQuartile = getLowQuartileForEvenLenArr(reversedS)
+	} else {
+		lowQuartile = getLowQuartileForOddLenArr(S)
+		reversedS := reverseArray(S)
+		highQuartile = getLowQuartileForOddLenArr(reversedS)
+	}
+
+	res := highQuartile - lowQuartile
+
+	fmt.Printf("%.1f", float64(res))
 
 }
 
