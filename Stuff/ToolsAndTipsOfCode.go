@@ -33,3 +33,13 @@ valueYetStringType = strings.TrimSpace(price) //Quita el espacio al final de la 
 valueConvertedToFloat64, _ := strconv.ParseFloat(price, 8)
 
 */
+
+/*
+// REMOVE LAST ELEMENT
+// removeLastCharFromAString is a funcion to remove the last chart or element of a sequence, string, array, slice, etc.
+// The name of func can be adapted according to need or what we gona do.
+
+func removeLastCharFromAString(s string) string {
+	s = s[:len(s) - 1]
+}
+*/
