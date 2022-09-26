@@ -20,7 +20,8 @@ func main () {
 
 }
 
-*/
+/*
+En un array, si quitamos un elemento con "append" por ejemplo, el indice se reordena desde 0 correctamente.
 
 /*  //Herramienta para leer input como una string real la cual puede ser de mas de una palabra.
 
